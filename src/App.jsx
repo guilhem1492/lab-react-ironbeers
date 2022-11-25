@@ -8,9 +8,8 @@ import NewBeer from "./components/NewBeer";
 function App() {
   return (
     <div className="App">
-      <Home />
-
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/beers" element={<Beers />} />
         <Route path="/random-beer" element={<RandomBeer />} />
         <Route path="/new-beer" element={<NewBeer />} />
