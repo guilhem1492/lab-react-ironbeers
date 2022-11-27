@@ -20,22 +20,26 @@ const BeerDetails = (props) => {
   return (
     <div>
       <Header />
-      <div className="beer-details">
-        <img
-          className="beer-img"
-          src={foundBeer.image_url}
-          alt={`Beer name: ${foundBeer.name}`}
-        />
-        <h3>{foundBeer.name}</h3>
-        <p>{foundBeer.tagline}</p>
-        <p>First brewed: {foundBeer.first_brewed}</p>
-        <p>Attenation level: {foundBeer.attenuation_level}</p>
-        <p>Description: {foundBeer.description}</p>
-        <p>Contributed by: {foundBeer.contributed_by}</p>
-        <button>
-          <Link to="/beers">Back</Link>
-        </button>
-      </div>
+
+      {!foundBeer && <h3>Beer not found!</h3>}
+      {foundBeer && (
+        <div className="beer-details">
+          <img
+            className="beer-img"
+            src={foundBeer.image_url}
+            alt={`Beer name: ${foundBeer.name}`}
+          />
+          <h3>{foundBeer.name}</h3>
+          <p>{foundBeer.tagline}</p>
+          <p>First brewed: {foundBeer.first_brewed}</p>
+          <p>Attenation level: {foundBeer.attenuation_level}</p>
+          <p>Description: {foundBeer.description}</p>
+          <p>Contributed by: {foundBeer.contributed_by}</p>
+          <button>
+            <Link to="/beers">Back</Link>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

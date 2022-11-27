@@ -29,7 +29,7 @@ const Beers = () => {
               />
               <h3>{beer.name}</h3>
               <p>{beer.tagline}</p>
-              <p>Created by: {beer.tagline}</p>
+              <p>Created by: {beer.contributed_by}</p>
               <hr />
             </li>
           </Link>
